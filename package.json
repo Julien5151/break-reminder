@@ -9,7 +9,8 @@
     "start": "electron .",
     "build:front": "ng build front",
     "watch:front": "ng build front --watch --configuration development",
-    "compile:back": "tsc --project tsconfig.back.json",
+    "build:back": "tsc --project tsconfig.back.json",
+    "watch:back": "tsc --watch --project tsconfig.back.json",
     "lint": "eslint . --ext .ts"
   },
   "private": true,
