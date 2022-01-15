@@ -70,6 +70,5 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
   // Only include back files
-  "include": ["./projects/back"],
-  "exclude": ["./projects/front"]
+  "include": ["./projects/back"]
 }
