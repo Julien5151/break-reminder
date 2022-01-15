@@ -15,7 +15,7 @@
       },
       "root": "projects/front",
       "sourceRoot": "projects/front/src",
-      "prefix": "app",
+      "prefix": "br",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -26,13 +26,8 @@
             "polyfills": "projects/front/src/polyfills.ts",
             "tsConfig": "projects/front/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "projects/front/src/favicon.ico",
-              "projects/front/src/assets"
-            ],
-            "styles": [
-              "projects/front/src/styles.scss"
-            ],
+            "assets": ["projects/front/src/favicon.ico", "projects/front/src/assets"],
+            "styles": ["projects/front/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -94,13 +89,8 @@
             "tsConfig": "projects/front/tsconfig.spec.json",
             "karmaConfig": "projects/front/karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "projects/front/src/favicon.ico",
-              "projects/front/src/assets"
-            ],
-            "styles": [
-              "projects/front/src/styles.scss"
-            ],
+            "assets": ["projects/front/src/favicon.ico", "projects/front/src/assets"],
+            "styles": ["projects/front/src/styles.scss"],
             "scripts": []
           }
         }

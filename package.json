@@ -1,13 +1,15 @@
 {
   "name": "break-reminder",
   "version": "0.0.0",
+  "description": "Break reminder application for Linux",
+  "main": "./dist/main.js",
+  "author": "Julien CLAUDEL",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "compile-back": "tsc --project tsconfig.back.json",
+    "start": "electron .",
+    "build:front": "ng build front",
+    "watch:front": "ng build front --watch --configuration development",
+    "compile:back": "tsc --project tsconfig.back.json",
     "lint": "eslint . --ext .ts"
   },
   "private": true,
@@ -33,8 +35,10 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
+    "electron": "^16.0.7",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-ngrx": "^2.0.0",
     "jasmine-core": "~3.10.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -42,7 +46,6 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "prettier": "^2.5.1",
-    "typescript": "~4.5.2",
-    "eslint-plugin-ngrx": "^2.0.0"
+    "typescript": "~4.5.2"
   }
 }
