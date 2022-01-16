@@ -4,6 +4,7 @@
   "description": "Break reminder application for Linux",
   "main": "./projects/back/main.js",
   "author": "Julien CLAUDEL",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "electron-forge start",
@@ -63,6 +64,10 @@
     "forge": {
       "packagerConfig": {},
       "makers": [
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        },
         {
           "name": "@electron-forge/maker-flatpak",
           "config": {
