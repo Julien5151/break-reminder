@@ -6,10 +6,12 @@
   "author": "Julien CLAUDEL",
   "scripts": {
     "ng": "ng",
-    "start": "electron .",
+    "start": "electron-forge start",
     "build:front": "ng build front",
     "watch:front": "ng build front --watch --configuration development",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@ngrx/store": "^13.0.2",
+    "electron-squirrel-startup": "^1.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -32,6 +35,12 @@
     "@angular-devkit/build-angular": "~13.1.3",
     "@angular/cli": "~13.1.2",
     "@angular/compiler-cli": "~13.1.0",
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-flatpak": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
@@ -49,5 +58,25 @@
     "prettier": "^2.5.1",
     "tailwindcss": "^3.0.15",
     "typescript": "~4.5.2"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-flatpak",
+          "config": {
+            "options": {
+              "categories": [
+                "Video"
+              ],
+              "mimeType": [
+                "video/h264"
+              ]
+            }
+          }
+        }
+      ]
+    }
   }
 }
