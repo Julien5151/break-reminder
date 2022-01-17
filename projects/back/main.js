@@ -1,17 +1,15 @@
-const { app, BrowserWindow, Tray } = require('electron');
+const { app, BrowserWindow, Tray, nativeImage } = require('electron');
 
-const createWindow = () => {
+app.whenReady().then(() => {
+  const icon = nativeImage.createFromPath('./dist/front/assets/images/logo/clock_64.png');
+  const tray = new Tray(icon);
+
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    icon: './dist/front/assets/images/logo_final_460px.png',
+    icon: icon,
   });
   win.loadFile('./dist/front/index.html');
-};
-
-app.whenReady().then(() => {
-  const appIcon = new Tray('./dist/front/assets/images/logo_final_460px.png');
-  createWindow();
 
   app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit();
