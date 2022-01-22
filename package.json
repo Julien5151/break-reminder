@@ -12,7 +12,8 @@
     "watch:front": "ng build front --watch --configuration development",
     "lint": "eslint . --ext .ts",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make:rpm": "electron-forge make --targets @electron-forge/maker-rpm",
+    "make:deb": "electron-forge make --targets @electron-forge/maker-deb"
   },
   "private": true,
   "dependencies": {
@@ -67,18 +68,19 @@
       "makers": [
         {
           "name": "@electron-forge/maker-rpm",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-flatpak",
           "config": {
             "options": {
-              "categories": [
-                "Video"
-              ],
-              "mimeType": [
-                "video/h264"
-              ]
+              "maintainer": "Julien CLAUDEL",
+              "homepage": "https://github.com/Julien5151/break-reminder"
+            }
+          }
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "maintainer": "Julien CLAUDEL",
+              "homepage": "https://github.com/Julien5151/break-reminder"
             }
           }
         }
