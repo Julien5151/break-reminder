@@ -1,10 +1,10 @@
 const { app, BrowserWindow, Tray, nativeImage, Menu } = require('electron');
-const { SPA_INDEX_HTML_PATH, LOGO_512_PX_PATH } = require('./constants/paths');
+const { SPA_INDEX_HTML_PATH, LOGO_64_PX_PATH } = require('./constants/paths');
 const path = require('path');
 
 app.whenReady().then(() => {
   // Create icon
-  const icon = nativeImage.createFromPath(path.join(__dirname, LOGO_512_PX_PATH));
+  const icon = nativeImage.createFromPath(path.join(__dirname, LOGO_64_PX_PATH));
   // Instanciate window
   const window = new BrowserWindow({
     width: 800,
