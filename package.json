@@ -13,8 +13,8 @@
     "watch:front": "ng build front --watch --configuration development",
     "lint": "eslint . --ext .ts",
     "package": "electron-forge package",
-    "make:rpm": "electron-forge make --targets @electron-forge/maker-rpm",
-    "make:deb": "electron-forge make --targets @electron-forge/maker-deb"
+    "make:rpm": "npm run build:front && electron-forge make --targets @electron-forge/maker-rpm",
+    "make:deb": "npm run build:front && electron-forge make --targets @electron-forge/maker-deb"
   },
   "private": true,
   "dependencies": {
