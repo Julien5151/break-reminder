@@ -15,7 +15,8 @@
     "lint": "eslint . --ext .ts",
     "package": "electron-forge package",
     "make:rpm": "npm run build:front && electron-forge make --targets @electron-forge/maker-rpm",
-    "make:deb": "npm run build:front && electron-forge make --targets @electron-forge/maker-deb"
+    "make:deb": "npm run build:front && electron-forge make --targets @electron-forge/maker-deb",
+    "make:flatpak": "npm run build:front && electron-forge make --targets @electron-forge/maker-flatpak"
   },
   "private": true,
   "dependencies": {
