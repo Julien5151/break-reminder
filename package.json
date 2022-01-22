@@ -70,6 +70,7 @@
           "name": "@electron-forge/maker-rpm",
           "config": {
             "options": {
+              "icon": "./dist/front/assets/images/logo/clock_512.png",
               "maintainer": "Julien CLAUDEL",
               "homepage": "https://github.com/Julien5151/break-reminder"
             }
@@ -79,6 +80,7 @@
           "name": "@electron-forge/maker-deb",
           "config": {
             "options": {
+              "icon": "./dist/front/assets/images/logo/clock_512.png",
               "maintainer": "Julien CLAUDEL",
               "homepage": "https://github.com/Julien5151/break-reminder"
             }
