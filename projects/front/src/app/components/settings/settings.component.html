@@ -1,2 +1,4 @@
-<button mat-raised-button (click)="handleClick()">Test notification</button>
-<p>{{ 'NOTIFICATIONS.TITLE' | translate }}</p>
+<mat-toolbar>{{ 'SETTINGS.TITLE' | translate }}</mat-toolbar>
+<mat-slider class="w-52" (input)="handleSliderValueChanged($event)" tickInterval="60" step="5" min="0" max="1440"></mat-slider>
+<p>{{ hours }} {{ 'SETTINGS.INTERVAL.HOURS' | translate }}, {{ minutes }} {{ 'SETTINGS.INTERVAL.MINUTES' | translate }}</p>
+<button mat-raised-button (click)="handleClick()">{{ 'FORMS.SAVE' | translate }}</button>

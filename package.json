@@ -8,6 +8,7 @@
   "scripts": {
     "ng": "ng",
     "start": "DEV=true electron-forge start",
+    "serve": "ng serve front",
     "build:front": "ng build front",
     "watch:front": "ng build front --watch --configuration development",
     "lint": "eslint . --ext .ts",

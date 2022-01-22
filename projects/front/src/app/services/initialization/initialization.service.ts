@@ -13,7 +13,7 @@ export class InitializationService {
    * Sets default language and load translation objects
    */
   initApp(): void {
-    this.translateService.setDefaultLang(Languages.ENGLISH);
     this.translateService.setTranslation(Languages.ENGLISH, ENGLISH_TRANSLATIONS);
+    this.translateService.setDefaultLang(Languages.ENGLISH);
   }
 }
