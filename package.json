@@ -1,6 +1,7 @@
 {
   "name": "break-reminder",
-  "version": "0.0.0",
+  "productName": "Break Reminder",
+  "version": "0.0.1",
   "description": "Break reminder application for Linux",
   "main": "./projects/back/main.js",
   "author": "Julien CLAUDEL",
@@ -65,7 +66,9 @@
   },
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "executableName": "break-reminder"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-rpm",
