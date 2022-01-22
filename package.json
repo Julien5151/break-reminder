@@ -90,6 +90,15 @@
               "homepage": "https://github.com/Julien5151/break-reminder"
             }
           }
+        },
+        {
+          "name": "@electron-forge/maker-flatpak",
+          "config": {
+            "options": {
+              "icon": "./dist/front/assets/images/logo/logo_512x512.png",
+              "productName": "Break Reminder"
+            }
+          }
         }
       ]
     }
