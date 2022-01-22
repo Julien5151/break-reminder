@@ -1,4 +1,15 @@
 <mat-toolbar>{{ 'SETTINGS.TITLE' | translate }}</mat-toolbar>
-<mat-slider class="w-52" (input)="handleSliderValueChanged($event)" tickInterval="60" step="5" min="0" max="1440"></mat-slider>
-<p>{{ hours }} {{ 'SETTINGS.INTERVAL.HOURS' | translate }}, {{ minutes }} {{ 'SETTINGS.INTERVAL.MINUTES' | translate }}</p>
-<button mat-raised-button (click)="handleClick()">{{ 'FORMS.SAVE' | translate }}</button>
+<p>{{ 'SETTINGS.INTERVAL.HOURS' | translate }}</p>
+<mat-slider class="w-52" thumbLabel (input)="handleHoursSliderValueChanged($event)" tickInterval="2" step="1" min="0" max="24"></mat-slider>
+<p>{{ 'SETTINGS.INTERVAL.MINUTES' | translate }}</p>
+<mat-slider
+  class="w-52"
+  thumbLabel
+  (input)="handleMinutesSliderValueChanged($event)"
+  tickInterval="1"
+  step="5"
+  min="0"
+  max="60"
+></mat-slider>
+<p>{{ hours }} {{ 'SETTINGS.INTERVAL.HOURS_SHORT' | translate }}, {{ minutes }} {{ 'SETTINGS.INTERVAL.MINUTES_SHORT' | translate }}</p>
+<button [disabled]="configSaved" mat-raised-button (click)="handleClick()">{{ 'FORMS.SAVE' | translate }}</button>

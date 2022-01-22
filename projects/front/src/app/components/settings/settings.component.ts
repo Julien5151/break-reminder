@@ -9,13 +9,20 @@ export class SettingsComponent implements OnDestroy {
   hours = 0;
   minutes = 0;
   intervalId = 0;
+  configSaved = false;
 
-  handleSliderValueChanged(event: MatSliderChange): void {
-    this.hours = Math.floor((event.value ?? 0) / 60);
-    this.minutes = (event.value ?? 0) % 60;
+  handleHoursSliderValueChanged(event: MatSliderChange): void {
+    this.configSaved = false;
+    this.hours = event.value ?? 0;
+  }
+
+  handleMinutesSliderValueChanged(event: MatSliderChange): void {
+    this.configSaved = false;
+    this.minutes = event.value ?? 0;
   }
 
   handleClick(): void {
+    this.configSaved = true;
     clearInterval(this.intervalId);
     this.intervalId = window.setInterval(() => {
       new Notification('Break time !', { body: 'You should take a break !', icon: 'assets/images/logo/clock_64.png' });
