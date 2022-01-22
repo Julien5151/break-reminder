@@ -11,7 +11,7 @@ app.whenReady().then(() => {
     icon: icon,
   });
   window.loadFile(SPA_INDEX_HTML_PATH);
-  // Remove menu window
+  // Remove menu from window
   window.setMenu(null);
   // Open console in develop
   if (process.env.DEV) {
