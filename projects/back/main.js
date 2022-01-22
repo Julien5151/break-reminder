@@ -1,7 +1,10 @@
 const { app, BrowserWindow, Tray, nativeImage } = require('electron');
+const { WINDOW_ALL_CLOSED_EVENT } = require('./constants/events');
+const { MACOS } = require('./constants/os');
+const { LOGO_64_PX_PATH, SPA_INDEX_HTML_PATH } = require('./constants/paths');
 
 app.whenReady().then(() => {
-  const icon = nativeImage.createFromPath('./dist/front/assets/images/logo/clock_64.png');
+  const icon = nativeImage.createFromPath(LOGO_64_PX_PATH);
   const tray = new Tray(icon);
 
   const win = new BrowserWindow({
@@ -9,9 +12,10 @@ app.whenReady().then(() => {
     height: 600,
     icon: icon,
   });
-  win.loadFile('./dist/front/index.html');
+  // Remove menu window
+  win.loadFile(SPA_INDEX_HTML_PATH);
 
-  app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit();
+  app.on(WINDOW_ALL_CLOSED_EVENT, () => {
+    if (process.platform !== MACOS) app.quit();
   });
 });
