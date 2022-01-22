@@ -10,8 +10,13 @@ app.whenReady().then(() => {
     height: 600,
     icon: icon,
   });
-  // Remove menu window
   window.loadFile(SPA_INDEX_HTML_PATH);
+  // Remove menu window
+  window.setMenu(null);
+  // Open console in develop
+  if (process.env.DEV) {
+    window.webContents.openDevTools();
+  }
   // Instanciate tray
   const tray = new Tray(icon);
   const contextMenu = Menu.buildFromTemplate([

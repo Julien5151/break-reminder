@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "electron-forge start",
+    "start": "DEV=true electron-forge start",
     "build:front": "ng build front",
     "watch:front": "ng build front --watch --configuration development",
     "lint": "eslint . --ext .ts",
