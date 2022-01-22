@@ -45,7 +45,7 @@ $dark-theme: mat.define-dark-theme(
 
 // Apply the light theme only when the `.my-light-theme` CSS class is applied
 // to an ancestor element of the components (such as `body`).
-.light-theme {
+.my-light-theme {
   @include mat.all-component-colors($light-theme);
 }
 
@@ -57,4 +57,5 @@ body {
 body {
   margin: 0;
   font-family: 'Roboto-thin', Roboto, 'Helvetica Neue', sans-serif;
+  color: white;
 }
