@@ -15,12 +15,12 @@ Break reminder is available as a _.deb_ or _.rpm_. Download the relevant package
 - Light/dark mode toggle
 - Message customization
 
-## Settings and notifications
+## 🕓 Settings and notifications 🕓
 
 ![Settings image](https://github.com/Julien5151/break-reminder/blob/main/doc/images/settings.png?raw=true)
 
 ![Notification image](https://github.com/Julien5151/break-reminder/blob/main/doc/images/notification.png?raw=true)
 
-## Icon attribution
+## 🔗 Icon attribution 🔗
 
 <a href="https://www.flaticon.com/free-icons/clock" title="clock icons">Clock icons created by Freepik - Flaticon</a>
