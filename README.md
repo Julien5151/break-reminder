@@ -1,10 +1,10 @@
 # Break Reminder
 
-Avoid eye strain and RSI using this simple application.
+Avoid eye strain using this simple application.
 
 ## 🔧 Installation instructions 🔧
 
-Break reminder is available as a *.deb* or *.rpm*. Download the relevant package for your distribution on the [release page](https://github.com/Julien5151/break-reminder/releases).
+Break reminder is available as a _.deb_ or _.rpm_. Download the relevant package for your distribution on the [release page](https://github.com/Julien5151/break-reminder/releases).
 
 ## 🚀 Application roadmap 🚀
 
