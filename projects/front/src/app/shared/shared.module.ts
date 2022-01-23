@@ -8,10 +8,20 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [BaseComponent],
   imports: [CommonModule, TranslateModule],
-  exports: [BaseComponent, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule, MatSliderModule],
+  exports: [
+    BaseComponent,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSliderModule,
+    MatDividerModule,
+  ],
 })
 export class SharedModule {}

@@ -7,8 +7,8 @@ app.whenReady().then(() => {
   const icon = nativeImage.createFromPath(path.join(__dirname, LOGO_64_PX_PATH));
   // Instanciate window
   const window = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 400,
+    height: 500,
     icon: icon,
   });
   window.loadFile(path.join(__dirname, SPA_INDEX_HTML_PATH));
