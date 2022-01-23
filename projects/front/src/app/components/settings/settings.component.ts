@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
+import { NotificationService } from '../../services/notification/notification.service';
 
 @Component({
   selector: 'br-settings',
@@ -10,6 +11,8 @@ export class SettingsComponent implements OnDestroy {
   minutes = 0;
   intervalId = 0;
   configSaved = false;
+
+  constructor(private readonly notificationService: NotificationService) {}
 
   handleHoursSliderValueChanged(event: MatSliderChange): void {
     this.configSaved = false;
@@ -25,7 +28,7 @@ export class SettingsComponent implements OnDestroy {
     this.configSaved = true;
     clearInterval(this.intervalId);
     this.intervalId = window.setInterval(() => {
-      new Notification('Break time !', { body: 'You should take a break !', icon: 'assets/images/logo/clock_64.png' });
+      this.notificationService.showNotification();
     }, (this.hours * 3600 + this.minutes * 60) * 1000);
   }
 
