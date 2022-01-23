@@ -8,7 +8,7 @@ app.whenReady().then(() => {
   // Instanciate window
   const window = new BrowserWindow({
     width: 400,
-    height: 500,
+    height: 400,
     icon: icon,
   });
   window.loadFile(path.join(__dirname, SPA_INDEX_HTML_PATH));

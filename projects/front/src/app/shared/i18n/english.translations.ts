@@ -8,6 +8,8 @@ export const ENGLISH_TRANSLATIONS = {
       MINUTES_SHORT: 'mins',
       SECONDS: 'Seconds',
       SECONDS_SHORT: 'secs',
+      SUMMARY: 'Break reminder every',
+      NO_BREAK: 'No break reminder.',
     },
   },
   NOTIFICATIONS: {

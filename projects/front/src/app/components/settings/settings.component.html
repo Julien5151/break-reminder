@@ -1,28 +1,21 @@
 <mat-toolbar class="flex justify-center">
   <span>{{ 'SETTINGS.TITLE' | translate }}</span>
 </mat-toolbar>
-<div class="px-4">
+<div class="px-4 flex flex-col justify-between h-full">
   <p class="my-2">{{ 'SETTINGS.INTERVAL.HOURS' | translate }} : {{ hours }}</p>
-  <mat-slider
-    class="w-52 mt-2"
-    thumbLabel
-    (input)="handleHoursSliderValueChanged($event)"
-    tickInterval="2"
-    step="1"
-    min="0"
-    max="24"
-  ></mat-slider>
+  <mat-slider thumbLabel (input)="handleHoursSliderValueChanged($event)" tickInterval="1" step="1" min="0" max="12"></mat-slider>
   <mat-divider></mat-divider>
   <p class="my-2">{{ 'SETTINGS.INTERVAL.MINUTES' | translate }} : {{ minutes }}</p>
-  <mat-slider
-    class="w-52 mt-2"
-    thumbLabel
-    (input)="handleMinutesSliderValueChanged($event)"
-    tickInterval="1"
-    step="5"
-    min="0"
-    max="60"
-  ></mat-slider>
+  <mat-slider thumbLabel (input)="handleMinutesSliderValueChanged($event)" tickInterval="1" step="5" min="0" max="55"></mat-slider>
+  <p *ngIf="hours || minutes; else noBreak" class="my-2">
+    {{ 'SETTINGS.INTERVAL.SUMMARY' | translate }}
+    {{ hours ? hours + ' ' + ('SETTINGS.INTERVAL.HOURS' | translate | lowercase) : '' }}
+    {{ hours > 0 && minutes > 0 ? ' and ' : '' }}
+    {{ minutes ? minutes + ' ' + ('SETTINGS.INTERVAL.MINUTES' | translate | lowercase) : '' }}
+  </p>
+  <ng-template #noBreak>
+    <p class="my-2">{{ 'SETTINGS.INTERVAL.NO_BREAK' | translate }}</p>
+  </ng-template>
   <div class="flex justify-end">
     <button [disabled]="configSaved || hours + minutes === 0" mat-raised-button (click)="handleClick()">
       {{ 'FORMS.SAVE' | translate }}
