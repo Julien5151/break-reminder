@@ -1,6 +1,15 @@
-# BreakReminder
+# Break Reminder
 
-Break reminder application. Avoid eye strain and RSI using this simple application.
+Avoid eye strain and RSI using this simple application.
+
+## 🚀 Application roadmap 🚀
+
+- 🚧 Refactor : TimerService + use of application state 🚧
+- Save settings locally
+- Auto timer reset when idle
+- On-screen break reminder with progress bar option
+- Light/dark mode toggle
+- Message customization
 
 ## Icon attribution
 
