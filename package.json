@@ -95,7 +95,17 @@
           "name": "@electron-forge/maker-flatpak",
           "config": {
             "options": {
-              "icon": "./dist/front/assets/images/logo/logo_512x512.png",
+              "id": "com.jcl.break-reminder",
+              "base": "org.electronjs.Electron2.BaseApp",
+              "baseVersion": "21.08",
+              "description": "Break reminder application for Linux",
+              "icon": "./dist/front/assets/images/logo/com.jcl.break-reminder.png",
+              "files": [
+                [
+                  "./dist/front/assets/images/logo/com.jcl.break-reminder.png",
+                  "/share/icons/hicolor/512x512/apps/com.jcl.break-reminder.png"
+                ]
+              ],
               "productName": "Break Reminder"
             }
           }
