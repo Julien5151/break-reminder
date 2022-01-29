@@ -1,7 +1,7 @@
 {
   "name": "break-reminder",
   "productName": "Break Reminder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Break reminder application for Linux",
   "main": "./projects/back/main.js",
   "author": "Julien CLAUDEL",
