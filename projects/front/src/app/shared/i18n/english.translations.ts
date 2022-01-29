@@ -12,10 +12,6 @@ export const ENGLISH_TRANSLATIONS = {
       NO_BREAK: 'No break reminder.',
     },
   },
-  NOTIFICATIONS: {
-    TITLE: "It's break time",
-    MESSAGE: 'You should take a break !',
-  },
   FORMS: {
     SAVE: 'Save',
   },

@@ -1,3 +1,4 @@
+const notificationsService = require('./notifications.service');
 const stateService = require('./state.service');
 
 class TimerService {
@@ -9,9 +10,9 @@ class TimerService {
     this.clearInterval();
     // Start new interval
     stateService.settings.intervalId = globalThis.setInterval(() => {
-      // Send notification - TO DO
-      console.log('Time for a break !');
-    }, stateService.settings.interval / 300);
+      // Send break reminder via notification
+      notificationsService.showNotification();
+    }, stateService.settings.interval);
   }
 
   /**
