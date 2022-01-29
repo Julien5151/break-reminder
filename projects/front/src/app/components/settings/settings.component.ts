@@ -1,15 +1,15 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
+import { SETTINGS_APPLIED_EVENT, SETTINGS_SAVED_EVENT } from 'projects/back/constants/events';
 import { IpcService } from '../../services/ipc/ipc.service';
 
 @Component({
   selector: 'br-settings',
   templateUrl: './settings.component.html',
 })
-export class SettingsComponent implements OnDestroy {
+export class SettingsComponent {
   hours = 0;
   minutes = 0;
-  intervalId = 0;
   configSaved = false;
 
   constructor(private readonly ipcService: IpcService) {}
@@ -25,15 +25,11 @@ export class SettingsComponent implements OnDestroy {
   }
 
   handleClick(): void {
-    this.configSaved = true;
-    clearInterval(this.intervalId);
-    this.ipcService.sendSyncMessage();
-    // this.intervalId = window.setInterval(() => {
-    //   this.notificationService.showNotification();
-    // }, (this.hours * 3600 + this.minutes * 60) * 1000);
-  }
-
-  ngOnDestroy(): void {
-    clearInterval(this.intervalId);
+    const response = this.ipcService.sendSyncMessage([SETTINGS_SAVED_EVENT, (this.hours * 3600 + this.minutes * 60) * 1000]);
+    if (response === SETTINGS_APPLIED_EVENT) {
+      console.log('interval applied');
+    } else {
+      console.error('interval failed');
+    }
   }
 }

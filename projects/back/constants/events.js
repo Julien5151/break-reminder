@@ -4,6 +4,8 @@ const APP_BEFORE_QUIT = 'before-quit';
 const WIN_CLOSE = 'close';
 const WIN_MINIMIZE = 'minimize';
 const WIN_MAXIMIZE = 'maximize';
+const SETTINGS_SAVED_EVENT = 'settings-saved';
+const SETTINGS_APPLIED_EVENT = 'settings-applied';
 
 module.exports = {
   APP_WINDOW_ALL_CLOSED_EVENT,
@@ -12,4 +14,6 @@ module.exports = {
   WIN_CLOSE,
   WIN_MINIMIZE,
   WIN_MAXIMIZE,
+  SETTINGS_SAVED_EVENT,
+  SETTINGS_APPLIED_EVENT,
 };

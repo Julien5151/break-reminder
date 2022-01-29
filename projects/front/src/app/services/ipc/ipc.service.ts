@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IpcRenderer } from 'electron';
+import { SYNCHRONOUS_CHANNEL } from 'projects/back/constants/channels';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,10 @@ export class IpcService {
     this.ipcRenderer = (window as any).electronAPIs.ipcRenderer;
   }
 
-  sendSyncMessage() {
-    console.log(this.ipcRenderer.sendSync('synchronous-message', 'ping')); // prints "pong"
+  /**
+   * Send message to main process synchronously and returns the reponse
+   */
+  sendSyncMessage(args: [string, ...any]): string {
+    return this.ipcRenderer.sendSync(SYNCHRONOUS_CHANNEL, args);
   }
 }
