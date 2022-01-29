@@ -1,6 +1,6 @@
 class StateService {
   constructor() {
-    this.breakInterval = null;
+    this.settings = { interval: null, intervalId: null };
   }
 }
 

@@ -27,7 +27,8 @@ export class SettingsComponent {
   handleClick(): void {
     const response = this.ipcService.sendSyncMessage([SETTINGS_SAVED_EVENT, (this.hours * 3600 + this.minutes * 60) * 1000]);
     if (response === SETTINGS_APPLIED_EVENT) {
-      console.log('interval applied');
+      // Config was successfully applied
+      this.configSaved = true;
     } else {
       console.error('interval failed');
     }
