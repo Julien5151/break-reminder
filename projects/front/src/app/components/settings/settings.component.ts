@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
-import { NotificationService } from '../../services/notification/notification.service';
+import { IpcService } from '../../services/ipc/ipc.service';
 
 @Component({
   selector: 'br-settings',
@@ -12,7 +12,7 @@ export class SettingsComponent implements OnDestroy {
   intervalId = 0;
   configSaved = false;
 
-  constructor(private readonly notificationService: NotificationService) {}
+  constructor(private readonly ipcService: IpcService) {}
 
   handleHoursSliderValueChanged(event: MatSliderChange): void {
     this.configSaved = false;
@@ -27,9 +27,10 @@ export class SettingsComponent implements OnDestroy {
   handleClick(): void {
     this.configSaved = true;
     clearInterval(this.intervalId);
-    this.intervalId = window.setInterval(() => {
-      this.notificationService.showNotification();
-    }, (this.hours * 3600 + this.minutes * 60) * 1000);
+    this.ipcService.sendSyncMessage();
+    // this.intervalId = window.setInterval(() => {
+    //   this.notificationService.showNotification();
+    // }, (this.hours * 3600 + this.minutes * 60) * 1000);
   }
 
   ngOnDestroy(): void {

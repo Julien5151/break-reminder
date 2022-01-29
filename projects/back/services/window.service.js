@@ -1,6 +1,6 @@
 const { BrowserWindow } = require('electron');
 const path = require('path');
-const { SPA_INDEX_HTML_PATH } = require('../constants/paths');
+const { SPA_INDEX_HTML_PATH, PRELOAD_SCRIPT_PATH } = require('../constants/paths');
 const iconService = require('./icon.service');
 
 class WindowService {
@@ -13,6 +13,9 @@ class WindowService {
       width: process.env.DEV ? 1000 : 400,
       height: 400,
       icon: iconService.nativeIcon,
+      webPreferences: {
+        preload: path.join(__dirname, PRELOAD_SCRIPT_PATH),
+      },
     });
     window.loadFile(path.join(__dirname, SPA_INDEX_HTML_PATH));
     // Remove menu from window
