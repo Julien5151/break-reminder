@@ -4,10 +4,26 @@
   </mat-toolbar>
   <div class="flex-1 flex flex-col justify-between p-4">
     <p class="my-2">{{ 'SETTINGS.INTERVAL.HOURS' | translate }} : {{ hours }}</p>
-    <mat-slider thumbLabel (input)="handleHoursSliderValueChanged($event)" tickInterval="1" step="1" min="0" max="12"></mat-slider>
+    <mat-slider
+      [value]="hours"
+      thumbLabel
+      (input)="handleHoursSliderValueChanged($event)"
+      tickInterval="1"
+      step="1"
+      min="0"
+      max="12"
+    ></mat-slider>
     <mat-divider></mat-divider>
     <p class="my-2">{{ 'SETTINGS.INTERVAL.MINUTES' | translate }} : {{ minutes }}</p>
-    <mat-slider thumbLabel (input)="handleMinutesSliderValueChanged($event)" tickInterval="1" step="5" min="0" max="55"></mat-slider>
+    <mat-slider
+      [value]="minutes"
+      thumbLabel
+      (input)="handleMinutesSliderValueChanged($event)"
+      tickInterval="1"
+      step="5"
+      min="0"
+      max="55"
+    ></mat-slider>
     <p *ngIf="hours || minutes; else noBreak" class="my-2">
       {{ 'SETTINGS.INTERVAL.SUMMARY' | translate }}
       {{ hours ? hours + ' ' + ('SETTINGS.INTERVAL.HOURS' | translate | lowercase) : '' }}

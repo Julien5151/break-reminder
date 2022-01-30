@@ -11,7 +11,9 @@ export class AppComponent implements OnInit {
   constructor(private readonly router: Router, private readonly initializationService: InitializationService) {}
 
   ngOnInit(): void {
+    // Init application
     this.initializationService.initApp();
+    // Navigate to settings page
     this.router.navigate([SETTINGS_ROUTE]);
   }
 }

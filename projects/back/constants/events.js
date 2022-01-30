@@ -6,6 +6,7 @@ const WIN_MINIMIZE = 'minimize';
 const WIN_MAXIMIZE = 'maximize';
 const SETTINGS_SAVED_EVENT = 'settings-saved';
 const SETTINGS_APPLIED_EVENT = 'settings-applied';
+const LOAD_STATE_EVENT = 'load-state';
 
 module.exports = {
   APP_WINDOW_ALL_CLOSED_EVENT,
@@ -16,4 +17,5 @@ module.exports = {
   WIN_MAXIMIZE,
   SETTINGS_SAVED_EVENT,
   SETTINGS_APPLIED_EVENT,
+  LOAD_STATE_EVENT,
 };

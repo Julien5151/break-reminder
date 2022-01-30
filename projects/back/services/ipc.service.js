@@ -1,6 +1,6 @@
 const { ipcMain } = require('electron');
 const { SYNCHRONOUS_CHANNEL } = require('../constants/channels');
-const { SETTINGS_SAVED_EVENT, SETTINGS_APPLIED_EVENT } = require('../constants/events');
+const { SETTINGS_SAVED_EVENT, SETTINGS_APPLIED_EVENT, LOAD_STATE_EVENT } = require('../constants/events');
 const stateService = require('./state.service');
 const timerService = require('./timer.service');
 
@@ -10,7 +10,7 @@ class IpcService {
       if (args[0] === SETTINGS_SAVED_EVENT) {
         // Save settings in state
         stateService.settings.interval = args[1];
-        // If value is no, no break reminder
+        // If value is 0, no break reminder
         if (stateService.settings.interval === 0) {
           timerService.clearInterval();
         } else {
@@ -19,6 +19,14 @@ class IpcService {
         }
         // Return confirmation to window
         event.returnValue = SETTINGS_APPLIED_EVENT;
+      }
+    });
+    ipcMain.on(SYNCHRONOUS_CHANNEL, (event, args) => {
+      if (args[0] === LOAD_STATE_EVENT) {
+        // Retrieve interval from state
+        const interval = stateService.settings.interval;
+        // Return interval to window
+        event.returnValue = interval;
       }
     });
   }
