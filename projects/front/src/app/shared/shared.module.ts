@@ -1,14 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { BaseComponent } from './components/base/base.component';
-import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { TranslateModule } from '@ngx-translate/core';
+import { BaseComponent } from './components/base/base.component';
 
 @NgModule({
   declarations: [BaseComponent],
@@ -22,6 +23,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatToolbarModule,
     MatSliderModule,
     MatDividerModule,
+    MatSlideToggleModule,
   ],
 })
 export class SharedModule {}

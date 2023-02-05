@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { LOAD_STATE_EVENT } from 'projects/back/constants/events';
-import { updateBreakIntervalAction } from '../../components/settings/settings.actions';
+import { updateBreakIntervalAction, updateCGTAction } from '../../components/settings/settings.actions';
 import { Languages } from '../../shared/enums/lang.enum';
 import { ENGLISH_TRANSLATIONS } from '../../shared/i18n/english.translations';
 import { IpcService } from '../ipc/ipc.service';
@@ -25,8 +25,9 @@ export class InitializationService {
     this.translateService.setTranslation(Languages.ENGLISH, ENGLISH_TRANSLATIONS);
     this.translateService.setDefaultLang(Languages.ENGLISH);
     // Load state from main process
-    const interval = this.ipcService.sendSyncMessage([LOAD_STATE_EVENT]) as unknown as number | null;
+    const { interval, cgt } = this.ipcService.sendSyncMessage([LOAD_STATE_EVENT]) as unknown as { interval: number | null; cgt: boolean };
     // Update state
     this.store.dispatch(updateBreakIntervalAction({ interval: interval }));
+    this.store.dispatch(updateCGTAction({ cgt }));
   }
 }

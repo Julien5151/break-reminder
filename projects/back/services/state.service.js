@@ -26,7 +26,7 @@ class StateService {
   }
 
   constructor() {
-    this.settings = { interval: null, intervalId: null };
+    this.settings = { interval: null, intervalId: null, cgt: false };
   }
 }
 

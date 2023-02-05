@@ -12,7 +12,7 @@ export class StoreService {
   /**
    * Returns a snapshot of the application state at the moment of getStateSnapshot invokation.
    */
-  getStateSnapshot(): State | null {
+  getStateSnapshot(): State {
     let appState = null;
     this.store
       .select(state => state)
@@ -20,7 +20,7 @@ export class StoreService {
       .subscribe(state => {
         appState = state;
       });
-    return appState;
+    return appState as unknown as State;
   }
 
   /**

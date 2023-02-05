@@ -30,6 +30,7 @@
       {{ hours > 0 && minutes > 0 ? ' and ' : '' }}
       {{ minutes ? minutes + ' ' + ('SETTINGS.INTERVAL.MINUTES' | translate | lowercase) : '' }}
     </p>
+    <mat-slide-toggle (change)="handleCGTValueChanged($event)" [checked]="cgt">{{ 'SETTINGS.CGT' | translate }}</mat-slide-toggle>
     <ng-template #noBreak>
       <p class="my-2">{{ 'SETTINGS.INTERVAL.NO_BREAK' | translate }}</p>
     </ng-template>
