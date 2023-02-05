@@ -8,6 +8,7 @@ Break reminder is available as a _.deb_ or _.rpm_. Download the relevant package
 
 ## 🚀 Application roadmap 🚀
 
+- ✅CGT mode ✅
 - 🚧 Load settings values when window is opened 🚧
 - Save settings locally
 - Auto timer reset when idle
