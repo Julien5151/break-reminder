@@ -1,6 +1,7 @@
 const { app, Tray, Menu } = require('electron');
 const iconService = require('./icon.service');
 const windowService = require('./window.service');
+const stateService = require('./state.service');
 
 class TrayService {
   constructor() {
@@ -30,6 +31,10 @@ class TrayService {
       // Bind reference to service property
       this.tray = tray;
     }, 0);
+  }
+
+  updateTrayImage() {
+    this.tray.setImage(stateService.settings.cgt ? iconService.nativeIconCGT : iconService.nativeIcon);
   }
 }
 

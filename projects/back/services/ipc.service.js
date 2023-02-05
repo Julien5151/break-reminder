@@ -3,6 +3,7 @@ const { SYNCHRONOUS_CHANNEL } = require('../constants/channels');
 const { SETTINGS_SAVED_EVENT, SETTINGS_APPLIED_EVENT, LOAD_STATE_EVENT } = require('../constants/events');
 const stateService = require('./state.service');
 const timerService = require('./timer.service');
+const trayService = require('./tray.service');
 
 class IpcService {
   handleSettingsMessages() {
@@ -18,6 +19,8 @@ class IpcService {
           // Start break reminder
           timerService.startInterval();
         }
+        // Update tray
+        trayService.updateTrayImage();
         // Return confirmation to window
         event.returnValue = SETTINGS_APPLIED_EVENT;
       }
