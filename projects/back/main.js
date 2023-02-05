@@ -16,5 +16,7 @@ app.whenReady().then(() => {
   ipcService.handleSettingsMessages();
 });
 
+// run this as early in the main process as possible
+if (require('electron-squirrel-startup')) app.quit();
 // Don't exit application when all window are closed, keep tray active
 app.on(APP_WINDOW_ALL_CLOSED_EVENT, event => event.preventDefault());
