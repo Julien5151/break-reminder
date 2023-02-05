@@ -10,7 +10,7 @@ app.whenReady().then(() => {
   windowService.createSettingsWindow();
   // Create tray
   trayService.createTray();
-  // Init notification obbjects
+  // Init notification objects
   notificationsService.initNotifications();
   // Handle messages from settings window
   ipcService.handleSettingsMessages();

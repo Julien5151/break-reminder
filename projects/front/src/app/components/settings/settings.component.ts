@@ -40,6 +40,7 @@ export class SettingsComponent implements OnInit {
   }
 
   handleCGTValueChanged(event: MatSlideToggleChange): void {
+    this.configSaved = false;
     this.cgt = event.checked;
   }
 

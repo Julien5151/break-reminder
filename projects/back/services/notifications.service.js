@@ -1,22 +1,23 @@
 const { Notification } = require('electron');
 const iconService = require('./icon.service');
+const stateService = require('./state.service');
 
 class NotificationsService {
-  constructor() {
-    this.notificationTitle = "It's break time";
-    this.notificationMessage = 'You should take a break !';
-  }
-
   initNotifications() {
     this.breakNotification = new Notification({
-      title: this.notificationTitle,
-      body: this.notificationMessage,
+      title: "It's break time",
+      body: 'You should take a break !',
       icon: iconService.nativeIcon,
+    });
+    this.cgtBreakNotification = new Notification({
+      title: 'Arrêtes le boulot camarade !',
+      body: 'Le patronat a assez exploité de ta productivité. Pause syndicale maintenant ! Ou grève !',
+      icon: iconService.nativeIconCGT,
     });
   }
 
   showNotification() {
-    this.breakNotification.show();
+    stateService.settings.cgt ? this.cgtBreakNotification.show() : this.breakNotification.show();
   }
 }
 

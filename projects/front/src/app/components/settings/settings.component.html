@@ -24,13 +24,15 @@
       min="0"
       max="55"
     ></mat-slider>
+    <mat-slide-toggle class="my-2" (change)="handleCGTValueChanged($event)" [checked]="cgt">{{
+      'SETTINGS.CGT' | translate
+    }}</mat-slide-toggle>
     <p *ngIf="hours || minutes; else noBreak" class="my-2">
       {{ 'SETTINGS.INTERVAL.SUMMARY' | translate }}
       {{ hours ? hours + ' ' + ('SETTINGS.INTERVAL.HOURS' | translate | lowercase) : '' }}
       {{ hours > 0 && minutes > 0 ? ' and ' : '' }}
       {{ minutes ? minutes + ' ' + ('SETTINGS.INTERVAL.MINUTES' | translate | lowercase) : '' }}
     </p>
-    <mat-slide-toggle (change)="handleCGTValueChanged($event)" [checked]="cgt">{{ 'SETTINGS.CGT' | translate }}</mat-slide-toggle>
     <ng-template #noBreak>
       <p class="my-2">{{ 'SETTINGS.INTERVAL.NO_BREAK' | translate }}</p>
     </ng-template>

@@ -11,7 +11,7 @@ export const ENGLISH_TRANSLATIONS = {
       SUMMARY: 'Break reminder every',
       NO_BREAK: 'No break reminder.',
     },
-    CGT: 'CGT Mode',
+    CGT: 'CGT mode',
   },
   FORMS: {
     SAVE: 'Save',
