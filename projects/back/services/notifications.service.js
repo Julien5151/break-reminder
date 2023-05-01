@@ -11,7 +11,7 @@ class NotificationsService {
     });
     this.cgtBreakNotification = new Notification({
       title: 'Arrêtes le boulot camarade !',
-      body: 'Le patronat a assez exploité de ta productivité. Pause syndicale maintenant ! Ou grève !',
+      body: 'Le patronat a assez exploité ta productivité. Pause syndicale maintenant ! Ou grève !',
       icon: iconService.nativeIconCGT,
     });
   }
