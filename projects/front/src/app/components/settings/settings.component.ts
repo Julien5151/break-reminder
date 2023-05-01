@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSlideToggleChange } from '@angular/material/slide-toggle';
-import { MatSliderChange } from '@angular/material/slider';
+import { MatLegacySlideToggleChange as MatSlideToggleChange } from '@angular/material/legacy-slide-toggle';
+import { MatLegacySliderChange as MatSliderChange } from '@angular/material/legacy-slider';
 import { SETTINGS_APPLIED_EVENT, SETTINGS_SAVED_EVENT } from 'projects/back/constants/events';
 import { IpcService } from '../../services/ipc/ipc.service';
 import { StoreService } from '../../services/store/store.service';
